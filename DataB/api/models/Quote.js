@@ -12,7 +12,7 @@ const quoteSchema = new Schema({
     },
     active: {
         type: Boolean,
-        default: True
+        default: true
     }
 })
 
