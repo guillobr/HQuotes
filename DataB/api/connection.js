@@ -1,15 +1,22 @@
+require('dotenv').config()
 const mongoose = require('mongoose')
 
-const uri = 'mongodb://127.0.0.1:27017/hquotes';
+const { DB_USER, DB_PASSWORD } = process.env
+
+console.log(DB_USER, DB_PASSWORD)
+
+const uri = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.naitk.mongodb.net/?retryWrites=true&w=majority`
+
+mongoose.connect(uri).catch((err) => {
+  console.log('ERROR AL CONECTAR', err)
+})
 
 const db = mongoose.connection
 
-mongoose.connect(uri);
-
-db.once('open',_=>{
-    console.log('Database is connected to',uri)
+db.on('open', (_) => {
+  console.log('conectado a ', uri)
+})
+db.on('error', (err) => {
+  console.log('error en db', err)
 })
 
-db.on('error', err =>{
-    console.log(err)
-})

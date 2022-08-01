@@ -13,4 +13,3 @@ quote.save((err,document)=>{
 })
 
 
-console.log(quote)
