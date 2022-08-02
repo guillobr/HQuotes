@@ -1,6 +1,6 @@
-require('./connection')
+require('../db')
 
-const User = require('./models/User')
+const User = require('../models/User')
 
 async function createUser(){
     const userOne = new User({

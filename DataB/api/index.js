@@ -1,15 +1,12 @@
-require('./connection')
 
-const Quote = require('./models/Quote')
+const server = require('./src/app.js')
 
-const quote = new Quote({
-    quote : "La verdadera recompensa de una vida bien vivida no reside en lo que obtienes al final del sendero, sino en lo que eres cuando llegas ahí",
-    author: {name: "Robin Sharma"},
+require('./src/db')
+
+server.listen(process.env.PORT || 3001, () => {
+  console.log('%s listening at 3001')
 })
 
-quote.save((err,document)=>{
-    if(err) console.log(err);
-    console.log(document)
-})
+
 
 
