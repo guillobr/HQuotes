@@ -1,6 +1,6 @@
-require('./connection')
+require('../db')
 
-const Quote = require('./models/Quote')
+const Quote = require('../models/Quote')
 
 async function main(){
     const quote = new Quote({
