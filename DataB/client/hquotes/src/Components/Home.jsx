@@ -6,6 +6,7 @@ import Card from './Card'
 import NavBar from './NavBar'
 import Paginado from './Paginado'
 import styles from "../Styles/home.module.css"
+import AddQuote from './AddQuote'
 
 
 
@@ -49,6 +50,9 @@ return(
                 paginado={paginado}
                 page={currentPage}
               />
+
+              <AddQuote/>
+              
         
 
 

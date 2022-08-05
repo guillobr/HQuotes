@@ -10,4 +10,18 @@ export function getQuotes() {
       })
     }
   }
+
+  export function postQuote(payload) {
+    return async function (dispatch) {
+      console.log(payload)
+      const json = await axios.post(
+        'http://localhost:3001/quotes/addQuote',
+        payload
+      )
+      return dispatch({
+        type: 'POST_QUOTE',
+        payload: payload,
+      })
+    }
+  }
   

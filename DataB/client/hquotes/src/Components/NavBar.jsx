@@ -7,6 +7,8 @@ import { useAuth0 } from '@auth0/auth0-react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import SearchBar from "./SearchBar";
+import LogInButton from "./LogIn";
+import LogOutButton from "./LogOut";
 import {
     Stack,
     Button,
@@ -30,10 +32,15 @@ export default function NavBar(){
         navigate('/home/')
       }
 
+      const { user, isAuthenticated } = useAuth0()
+
 
       return(
         <div className={styles.container}>
             <h1 className={styles.h1}>HQuotes</h1>
+
+            {/* {isAuthenticated ? <LogOutButton /> : <LogInButton />} */}
+            <LogInButton/>
 
 
 

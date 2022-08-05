@@ -7,7 +7,7 @@ export default function Card({quote , author}){
     return(
         <div className={styles.card}>
             <div>
-            <text className={styles.quote}>"{quote}"</text>
+            <p className={styles.quote}>"{quote}"</p>
            
             <p className={styles.author}>-{author}</p>
             </div>

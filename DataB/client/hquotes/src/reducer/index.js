@@ -11,9 +11,16 @@ const initialState = {
           quotes: action.payload,
         }
 
+      case 'POST_QUOTE':
+        return {
+          ...state,
+          quotes: [...state.quotes, action.payload],
+        }
+
         default:
           return state
       }
     }
+
   
   export default rootReducer
