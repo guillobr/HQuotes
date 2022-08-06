@@ -1,8 +1,44 @@
-.color {
+.home {
+    /* background-color: rgba(49,45,63,255); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    min-height: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .color {
+    padding:0px;
     height: 100%;
- 
-    
     width: 100%;
+    background: cover;
+    background-color: rgba(49,45,63,255);
+    background-size: cover;
+    display: flex;
    
     
+  } */
+
+  .color {
+    height: 100%;
+    background: rgba(49,45,63,255);
+    padding: 50px 0;
   }
+
+ 
+ 
+
+
+  .card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;   
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+  
+
