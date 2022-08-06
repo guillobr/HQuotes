@@ -7,6 +7,7 @@ import NavBar from './NavBar'
 import Paginado from './Paginado'
 import styles from "../Styles/home.module.css"
 import AddQuote from './AddQuote'
+import { Link } from 'react-router-dom'
 
 
 
@@ -14,6 +15,9 @@ import AddQuote from './AddQuote'
 export default function Home(){
     const dispatch = useDispatch()
     const allQuotes = useSelector((state) => state.quotes)
+    const usuarios= useSelector(state=> state.users)
+    console.log('usuarios:',usuarios)
+
 
     const [currentPage, setCurrentPage] = useState(1)
     const [quotesPerPage, setbookPerPage] = useState(1)
@@ -26,11 +30,13 @@ export default function Home(){
     }
 
 return(
-    <div className={styles.color}>
+    <div className={styles.home}>
+        <h1>Home</h1>
+   
         
       
        
-        <div>
+    <div className={styles.card}>
             {currentQuotes.map(quote=>{
                 return(
                     <div>
@@ -42,21 +48,41 @@ return(
                 )
                 
             })}
-        </div>
+        </div> 
 
-        <Paginado
+         <Paginado
                 quotesPerPage={quotesPerPage}
                 quote1={allQuotes.length}
                 paginado={paginado}
                 page={currentPage}
               />
 
-              <AddQuote/>
-              
+    <Link to='/addQuote'>
+        <button>Agregar Frase</button>
+    
+    </Link>
+
+    {usuarios.map(usuario=>{
+                return(
+                    <div>
+                       {usuario.name}
+                    </div>
+                )
+                
+            })}
+
+    {/* {usuarios.lenght>0 ? (
+    usuarios.map(u=>{
+        return(
+            <li>{u.name}</li>
+        )
+    })):('NO HAY USUARIOS')} */}
+               
         
 
 
 
+   
     </div>
 )
     

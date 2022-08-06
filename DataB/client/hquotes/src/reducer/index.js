@@ -1,5 +1,8 @@
 const initialState = {
-    quotes: []
+    quotes: [],
+    users: [],
+    usersCopy: [],
+    userLogged: []
   }
 
 
@@ -17,10 +20,26 @@ const initialState = {
           quotes: [...state.quotes, action.payload],
         }
 
+      case 'GET_USERS':
+        return {
+          ...state,
+          users: action.payload,
+          usersCopy: action.payload,
+        }
+
+    case 'POST_USER':
+     
+      return {
+        ...state,
+        userLogged: action.payload,
+      }
+
         default:
           return state
       }
     }
+
+    
 
   
   export default rootReducer

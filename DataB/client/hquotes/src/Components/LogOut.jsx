@@ -14,6 +14,18 @@ import {
 } from '@mui/material'
 import AccountBoxIcon from '@mui/icons-material/AccountBox'
 
+// export default function LogOutButton() {
+//   const { logout } = useAuth0()
+
+//   return(
+//     <div>
+//       <button onClick={() => logout({ returnTo: window.location.origin })}>Log Out</button>
+//     </div>
+//   )
+// }
+
+
+
 
 export default function LogOutButton() {
   const { logout } = useAuth0()
