@@ -40,11 +40,11 @@ export default function LogOutButton() {
   return (
     <Box>
       <IconButton onClick={handleOpenUserMenu}>
-        {/* <Avatar
+         <Avatar
           sx={{ width: 56, height: 56 }}
           alt={user?.nickname}
           src={user?.picture}
-        /> */}
+        /> 
       </IconButton>
 
       <Menu
@@ -58,7 +58,7 @@ export default function LogOutButton() {
         onClose={handleCloseUserMenu}
         disableScrollLock={true}
       >
-        {/* {!user?.isBanned ? (
+       {!user?.isBanned ? (
           <MenuItem onClick={handleCloseUserMenu} as={Link} to='/user'>
             <Typography color='#212529' textAlign={'center'}>
               Mi cuenta
@@ -66,7 +66,7 @@ export default function LogOutButton() {
           </MenuItem>
         ) : (
           ''
-        )} */}
+        )} 
  
          {user?.isAdmin ? (
           <div>

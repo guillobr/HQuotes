@@ -13,6 +13,7 @@ export default function Profile(){
     return(
         isAuthenticated &&(
             <div>
+                <h1>Perfil</h1>
                 <img src={user.picture} alt ={user.name}></img>
                 <h2>{user.name}</h2>
                 <p>{user.email}</p>

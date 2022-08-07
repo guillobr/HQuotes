@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { postQuote } from '../actions'
+import { postQuote } from '../../../actions'
 import { useDispatch, useSelector } from 'react-redux'
-import style from "../Styles/addQuote.module.css"
+import style from '../../../Styles/addQuote.module.css'
 
 
-export default function AddQuote() {
+export default function AddAuthor() {
   const dispatch = useDispatch()
 
   const allQuotes = useSelector((state) => state.quotes)
