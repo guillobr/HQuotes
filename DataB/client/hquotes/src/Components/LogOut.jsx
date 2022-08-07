@@ -29,7 +29,7 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox'
 
 export default function LogOutButton() {
   const { logout } = useAuth0()
-  //const user = useSelector((state) => state.userLogged)[0]
+  const user = useSelector((state) => state.userLogged)[0]
   const [anchorElUser, setAnchorElUser] = React.useState(null)
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget)
@@ -67,8 +67,8 @@ export default function LogOutButton() {
         ) : (
           ''
         )} */}
-
-        {/* {user?.isAdmin && !user.isBanned ? (
+ 
+         {user?.isAdmin ? (
           <div>
             <Divider />
             <MenuItem onClick={handleCloseUserMenu} as={Link} to='/admin'>
@@ -79,8 +79,8 @@ export default function LogOutButton() {
           </div>
         ) : (
           ''
-        )} */}
-        {/* {user?.isSuperAdmin && !user.isBanned ? (
+        )} 
+        {user?.isSuperAdmin ? (
           <MenuItem onClick={handleCloseUserMenu} as={Link} to='/adminpro'>
             <Typography color='#212529' textAlign={'center'}>
               Super Administrador
@@ -88,7 +88,7 @@ export default function LogOutButton() {
           </MenuItem>
         ) : (
           ''
-        )} */}
+        )} 
         <Divider />
         <MenuItem onClick={() => logout({ returnTo: window.location.origin })}>
           <Typography color='#212529' textAlign={'center'}>
