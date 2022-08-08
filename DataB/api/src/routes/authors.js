@@ -49,6 +49,18 @@ router.get('/', async (req, res) => {
     }
   })
 
+  router.put('/update/:id', async (req, res) => {
+    const { id } = req.params
+  
+    try {
+      if (Object.keys(req.body).length === 0) throw new Error('Send propertys')
+      const author = await Author.findByIdAndUpdate(id, req.body, { new: 1 })
+      res.json(author)
+    } catch (error) {
+      console.log('FALLO EL UPDATE', error)
+    }
+  })
+ //Revisar: en quotes solo trae los id, estaria bueno que traiga todo?
 
 
 router.delete('/deleteAuthor/:id', async (req, res) => {
@@ -61,5 +73,7 @@ router.delete('/deleteAuthor/:id', async (req, res) => {
       res.send({ error: 'ESA Autor NO EXISTE' })
     }
   })
+
+  //SI Borro al autor no se borra la frase, chequear cuando vea la ruta de hide
 
 module.exports = router
