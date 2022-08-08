@@ -49,3 +49,16 @@ export function getQuotes() {
     }
   }
   
+
+  //ADMIN
+  //QUOTES
+
+  export function getAdminQuotes() {
+    return async function (dispatch) {
+      var json = await axios.get('http://localhost:3001/quotes/')
+      return dispatch({
+        type: 'GET_ADMIN_QUOTES',
+        payload: json.data,
+      })
+    }
+  }

@@ -17,8 +17,16 @@ import Home from './Components/Home'
 import LandingPage from './Components/LandingPage'
 import NavBar from './Components/NavBar'
 import LogInButton from './Components/LogIn'
-import AddQuote from './Components/AddQuote'
+import AddQuote from './Components/Admin/Add/AddQuote'
+import Profile from './Components/User/Profile'
 import { useAuth0 } from '@auth0/auth0-react'
+import { Admin } from './Components/Admin/Admin'
+import Add from './Components/Admin/Add/Add'
+import Put from './Components/Admin/User/Users'
+import Delete from './Components/Admin/Delete/Delete'
+import Users from './Components/Admin/User/Users'
+import AddAuthor from './Components/Admin/Add/AddAuthor'
+
 
 export default function App() {
 
@@ -55,6 +63,14 @@ export default function App() {
         <Route path='/' element={<LandingPage />} />
         <Route path='/home' element={<Home />} />
         <Route path='/addQuote' element={<AddQuote/>} />
+        <Route path='/user' element={<Profile/>} />
+        <Route path='/admin' element={<Admin/>} />
+        <Route path='/add' element={<Add/>} />
+        <Route path='/put' element={<Put/>} />
+        <Route path='/delete' element={<Delete/>} />
+        <Route path='/adminusers' element={<Users/>} />
+        <Route path='/addauthor' element={<AddAuthor/>} />
+        <Route path='/addquote' element={<AddQuote/>} />
         
       </Route>
     </Routes>

@@ -1,11 +1,16 @@
 const { Schema , model } = require('mongoose')
 
 const quoteSchema = new Schema({
-    quote : String,
+    quote:{
+        type: String,
+        required: true,
+      },
+
     author: {
-        type: Object,
-        default: 'Unknown'
-    },
+        type: Schema.Types.ObjectId,
+        ref: 'Author',
+      },
+
     category:{
         type: Array,
         default: 'Unknown'

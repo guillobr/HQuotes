@@ -6,7 +6,7 @@ import Card from './Card'
 import NavBar from './NavBar'
 import Paginado from './Paginado'
 import styles from "../Styles/home.module.css"
-import AddQuote from './AddQuote'
+import AddQuote from './Admin/Add/AddQuote'
 import { Link } from 'react-router-dom'
 
 
@@ -31,11 +31,7 @@ export default function Home(){
 
 return(
     <div className={styles.home}>
-        <h1>Home</h1>
-   
         
-      
-       
     <div className={styles.card}>
             {currentQuotes.map(quote=>{
                 return(
@@ -57,32 +53,7 @@ return(
                 page={currentPage}
               />
 
-    <Link to='/addQuote'>
-        <button>Agregar Frase</button>
-    
-    </Link>
-
-    {usuarios.map(usuario=>{
-                return(
-                    <div>
-                       {usuario.name}
-                    </div>
-                )
-                
-            })}
-
-    {/* {usuarios.lenght>0 ? (
-    usuarios.map(u=>{
-        return(
-            <li>{u.name}</li>
-        )
-    })):('NO HAY USUARIOS')} */}
-               
-        
-
-
-
-   
+ 
     </div>
 )
     

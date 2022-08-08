@@ -1,5 +1,8 @@
 const { Schema, model } = require('mongoose')
 
+
+
+
 const authorSchema = new Schema({
   name: {
     type: String,
@@ -7,6 +10,7 @@ const authorSchema = new Schema({
   },
   birth: {
     type: String,
+    default: 'Unknown',
   },
   country: {
     type: String,
@@ -21,21 +25,16 @@ const authorSchema = new Schema({
     type: String,
     required: true,
   },
-  books: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Books',
-    },
-  ],
   quotes: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Quotes',
+      ref: 'Quote',
     },
   ],
-  isHidden: {
+  
+  isActive: {
     type: Boolean,
-    default: false,
+    default: true,
   },
 })
 

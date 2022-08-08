@@ -1,0 +1,54 @@
+.admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .containerAdmin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem;
+    border-radius: 10px;
+    background-color: #ffffff;
+  }
+  
+  .btn {
+    background-color: transparent;
+    border: none;
+    color: rgb(1, 0, 0);
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+  }
+  
+  .btn::before {
+    content: '';
+    background: white;
+    height: 3px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    transition: 0.3s;
+  }
+  .btn:hover::before {
+    width: 90%;
+  }
+  
+  .btn::after {
+    content: '';
+    background: white;
+    height: 3px;
+    width: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: 0.3s;
+  }
+  .btn:hover::after {
+    width: 100%;
+  }
+  
