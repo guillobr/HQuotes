@@ -11,11 +11,13 @@ const quoteSchema = new Schema({
         ref: 'Author',
       },
 
-    category:{
-        type: Array,
-        default: 'Unknown'
-    },
-    active: {
+      category: [
+        {
+          type: Schema.Types.ObjectId,
+          ref: 'Category',
+        },
+      ],
+    isActive: {
         type: Boolean,
         default: true
     }
