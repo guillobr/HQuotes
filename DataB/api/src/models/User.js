@@ -65,12 +65,12 @@ const userSchema = new Schema({
       //   type: Boolean,
       //   default: false,
       // },
-      // favouritesQuotes: [
-      //   {
-      //     type: Schema.Types.ObjectId,
-      //     ref: 'Quote',
-      //   },
-      // ],
+      favouritesQuotes: [
+        {
+          type: Schema.Types.ObjectId,
+          ref: 'Quote',
+        },
+      ],
 })
 
 module.exports = model('User' , userSchema)
